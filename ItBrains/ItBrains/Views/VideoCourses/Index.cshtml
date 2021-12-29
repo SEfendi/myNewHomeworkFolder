@@ -1,0 +1,71 @@
+﻿@section Css{
+    <link rel="stylesheet" href="~/src/css/secondary.css" />
+}
+<main>
+    <section class="videos">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="video-title">
+                    <p>VİDEODƏRSLƏR</p>
+                    <p class="video-description">
+                        Video dərslər vasitəsilə siz biliklərinizi artıra bilərsiniz
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card" style="width: 100%">
+                        <div class="video-img">
+                            <img src="~/src/images/educators.png"
+                                 class="card-img-top"
+                                 alt="video1" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                C# Back-end proqramlaşdırma-console
+                            </h5>
+                            <a asp-controller="VideoCourses" asp-action="Detail" class="video-button">
+                                DƏRSLƏRİ İZLƏ...
+                                <span> <i class="fas fa-angle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card" style="width: 100%">
+                        <div class="video-img">
+                            <img src="~/src/images/HTMLCSS.png"
+                                 class="card-img-top"
+                                 alt="video2" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                FRONT-END Proqramlaşdırma (HTML, CSS, JAVASCRİPT)
+                            </h5>
+                            <a asp-controller="VideoCourses" asp-action="Detail" class="video-button">
+                                DƏRSLƏRİ İZLƏ...
+                                <span> <i class="fas fa-angle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card" style="width: 100%">
+                        <div class="video-img">
+                            <img src="~/src/images/HTMLCSS.png"
+                                 class="card-img-top"
+                                 alt="video3" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Helpdesk (Texniki dəstək)</h5>
+                            <a asp-controller="VideoCourses" asp-action="Detail" class="video-button">
+                                DƏRSLƏRİ İZLƏ...
+                                <span> <i class="fas fa-angle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

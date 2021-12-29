@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Homework2810
 {
@@ -6,15 +7,21 @@ namespace Homework2810
     {
         static void Main(string[] args)
         {
+            
 
-            Student student = new Student("Sarkhan", "Afandizada");
-            student.Mark = 11;
-            Console.WriteLine($"Sarkhan's mark is { student.Mark}");
-            Console.WriteLine(student.ToString());
 
-            string[] menimArrayim = { "Sdsfasda3","Sdsfs", "Saaaas", "Sfasdasffgaagasdgasdfs1", "Sfs", "Sfasdasffgaagasdgasdfs2", "Sfasdasffgaagasdgasdfs3", "Sdsfasda1", "Sdsfasda2", "Sfasdasffgaagasdgasdfs9", };
 
-            Console.WriteLine(Helper.ReturnLongestWord(menimArrayim));
+            Console.WriteLine(Reverse("Salam men serxanam"));
+        }
+
+        public static string Reverse( string word)
+        {
+            StringBuilder myString = new StringBuilder(" ");
+            for (int i = 0 ; i < word.Length; i++)
+			{
+                myString.Append(word[word.Length-i]);
+			}
+            return myString.ToString();
         }
     }
 }

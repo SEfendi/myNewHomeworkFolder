@@ -1,4 +1,7 @@
-﻿<!-- *********************     Main  Start     ************************ -->
+﻿
+@model HomeVM
+
+<!-- *********************     Main  Start     ************************ -->
 <main>
     <!-- *********************   BackGround-Image Start  ************************ -->
     <section class="bg-sec" style="overflow: hidden">
@@ -156,32 +159,13 @@
                     <div class="info-data">
                         <p class="info-title">Niye it BRAINS?</p>
                         <p class="info-description">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown
-                            printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but
-                            also the leap into electronic typesetting, remaining
-                            essentially unchanged. It was popularised in the 1960s with
-                            the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum. Lorem
-                            Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset
-                            sheets containing Lorem Ipsum passages, and more recently with
-                            desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                            @Model.About.Text
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-8 col-sm-12">
                     <div class="info-video">
-                        <img src="~/src/images/about.png" alt="" />
+                        <img src="~/src/images/@Model.About.Image" alt="" />
                     </div>
                 </div>
             </div>
@@ -199,70 +183,30 @@
                 </div>
             </div>
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card" style="width: 100%">
-                        <div class="news-img">
-                            <img src="~/src/images/educators.png"
-                                 class="card-img-top"
-                                 alt="news1" />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                FRONT-END Dərslərimizə qeydiyyat başladı
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
-                            <a href="newsDetail.html" class="news-button">
-                                ƏTRAFLI <span> <i class="fas fa-angle-right"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card" style="width: 100%">
-                        <div class="news-img">
-                            <img src="~/src/images/edukhana.png"
-                                 class="card-img-top"
-                                 alt="news2" />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Help desk dərslərimizə qeydiyyat başladı
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
-                            <a href="newsDetail.html" class="news-button">
-                                ƏTRAFLI <span> <i class="fas fa-angle-right"></i></span>
-                            </a>
+                @foreach (Blog blog in Model.Blogs)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="card" style="width: 100%">
+                            <div class="news-img">
+                                <img src="~/src/images/@blog.Image"
+                                     class="card-img-top"
+                                     alt="news1" />
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @blog.Title
+                                </h5>
+                                <p class="card-text">
+                                    @blog.Subtitle
+                                </p>
+                                <a href="newsDetail.html" class="news-button">
+                                    ƏTRAFLI <span> <i class="fas fa-angle-right"></i></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card" style="width: 100%">
-                        <div class="news-img">
-                            <img src="~/src/images/HTMLCSS.png"
-                                 class="card-img-top"
-                                 alt="news3" />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Back-End proqramlaşdırmadan yeni video youtube kanalımıza
-                                yükləndi
-                            </h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
-                            <a href="newsDetail.html" class="news-button">
-                                ƏTRAFLI <span> <i class="fas fa-angle-right"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+                }
             </div>
         </div>
     </section>
@@ -278,125 +222,32 @@
             <div class="row">
                 <div class="col">
                     <div class="owl-carousel owl-theme owl-graduated">
-                        <div class="item">
-                            <i class="fas fa-quote-left"></i>
-                            <div class="card">
-                                <div class="card-about">
-                                    <div class="card-image">
-                                        <img class="card-img-top"
-                                             src="~/src/img/teachers/BABAK_PİC.JPG"
-                                             alt="" />
+                        @foreach (FeedBack feedBack in Model.FeedBacks)
+                        {
+                            <div class="item">
+                                <i class="fas fa-quote-left"></i>
+                                <div class="card">
+                                    <div class="card-about">
+                                        <div class="card-image">
+                                            <img class="card-img-top"
+                                                 src="~/src/img/teachers/@feedBack.Image"
+                                                 alt="" />
+                                        </div>
+                                        <div class="card-name">
+                                            <p class="name">@feedBack.FullName</p>
+                                            <p class="field">@feedBack.CoursesName</p>
+                                        </div>
                                     </div>
-                                    <div class="card-name">
-                                        <p class="name">Nerrgiz Mustafayeva</p>
-                                        <p class="field">FRONT-END</p>
+                                    <div class="card-body">
+                                        <p>
+                                            @feedBack.Comment
+                                        </p>
                                     </div>
+                                    <p class="border-bottom"></p>
                                 </div>
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Aut nam eligendi molestiae veniam voluptate libero labori
-                                    </p>
-                                </div>
-                                <p class="border-bottom"></p>
                             </div>
-                        </div>
-                        <div class="item">
-                            <i class="fas fa-quote-left"></i>
-                            <div class="card">
-                                <div class="card-about">
-                                    <div class="card-image">
-                                        <img class="card-img-top"
-                                             src="~/src/img/teachers/BABAK_PİC.JPG"
-                                             alt="" />
-                                    </div>
-                                    <div class="card-name">
-                                        <p class="name">Nerrgiz Mustafayeva</p>
-                                        <p class="field">FRONT-END</p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Aut nam eligendi molestiae veniam voluptate libero labori
-                                    </p>
-                                </div>
-                                <p class="border-bottom"></p>
-                            </div>
+                        }
 
-                        </div>
-                        <div class="item">
-                            <i class="fas fa-quote-left"></i>
-                            <div class="card">
-                                <div class="card-about">
-                                    <div class="card-image">
-                                        <img class="card-img-top"
-                                             src="~/src/img/teachers/BABAK_PİC.JPG"
-                                             alt="" />
-                                    </div>
-                                    <div class="card-name">
-                                        <p class="name">Nerrgiz Mustafayeva</p>
-                                        <p class="field">FRONT-END</p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Aut nam eligendi molestiae veniam voluptate libero labori
-                                    </p>
-                                </div>
-                                <p class="border-bottom"></p>
-                            </div>
-
-                        </div>
-                        <div class="item">
-                            <i class="fas fa-quote-left"></i>
-                            <div class="card">
-                                <div class="card-about">
-                                    <div class="card-image">
-                                        <img class="card-img-top"
-                                             src="~/src/img/teachers/BABAK_PİC.JPG"
-                                             alt="" />
-                                    </div>
-                                    <div class="card-name">
-                                        <p class="name">Nerrgiz Mustafayeva</p>
-                                        <p class="field">FRONT-END</p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Aut nam eligendi molestiae veniam voluptate libero labori
-                                    </p>
-                                </div>
-                                <p class="border-bottom"></p>
-                            </div>
-
-                        </div>
-                        <div class="item">
-                            <i class="fas fa-quote-left"></i>
-                            <div class="card">
-                                <div class="card-about">
-                                    <div class="card-image">
-                                        <img class="card-img-top"
-                                             src="~/src/img/teachers/BABAK_PİC.JPG"
-                                             alt="" />
-                                    </div>
-                                    <div class="card-name">
-                                        <p class="name">Nerrgiz Mustafayeva</p>
-                                        <p class="field">FRONT-END</p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Aut nam eligendi molestiae veniam voluptate libero labori
-                                    </p>
-                                </div>
-                                <p class="border-bottom"></p>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>

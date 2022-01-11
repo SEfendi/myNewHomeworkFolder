@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\source\\repos\\ItBrains\\ItBrains\\ItBrains.csproj": {}
+    "C:\\Users\\ASUS\\source\\repos\\SEfendi\\myNewHomeworkFolder\\ItBrains\\ItBrains\\ItBrains.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\source\\repos\\ItBrains\\ItBrains\\ItBrains.csproj": {
+    "C:\\Users\\ASUS\\source\\repos\\SEfendi\\myNewHomeworkFolder\\ItBrains\\ItBrains\\ItBrains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\source\\repos\\ItBrains\\ItBrains\\ItBrains.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\source\\repos\\SEfendi\\myNewHomeworkFolder\\ItBrains\\ItBrains\\ItBrains.csproj",
         "projectName": "ItBrains",
-        "projectPath": "C:\\Users\\ASUS\\source\\repos\\ItBrains\\ItBrains\\ItBrains.csproj",
+        "projectPath": "C:\\Users\\ASUS\\source\\repos\\SEfendi\\myNewHomeworkFolder\\ItBrains\\ItBrains\\ItBrains.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\source\\repos\\ItBrains\\ItBrains\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\source\\repos\\SEfendi\\myNewHomeworkFolder\\ItBrains\\ItBrains\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
